@@ -1,60 +1,109 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Feb 27 15:28:06 2015
 
-@author: JCWillia
+# Form implementation generated from reading ui file 'InputTable_UI.ui'
+#
+# Created: Fri Oct 23 13:18:28 2015
+#      by: PyQt4 UI code generator 4.10.4
+#
+# WARNING! All changes made in this file will be lost!
 
-"""
+from PyQt4 import QtCore, QtGui
 
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
 
-#Importing the pyqt library for gui operations
-from PyQt4 import uic
-from PyQt4.QtGui import *
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
 
-## To compile the .ui file to a .py prior to importing it here, run this line in the CMD terminal in the directory containing .ui version of the GUI from Qt Design. 
-# pyuic4 moistureConversionGUI.ui -o moistureConversionGUI.py 
-## Now we would import the ui file like any other python class
-#import moistureConversionGUI
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName(_fromUtf8("Form"))
+        Form.resize(707, 426)
+        self.gridLayout = QtGui.QGridLayout(Form)
+        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.verticalLayout = QtGui.QVBoxLayout()
+        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.insert_row = QtGui.QPushButton(Form)
+        self.insert_row.setObjectName(_fromUtf8("insert_row"))
+        self.horizontalLayout.addWidget(self.insert_row)
+        self.DeleteCurrentRow = QtGui.QPushButton(Form)
+        self.DeleteCurrentRow.setObjectName(_fromUtf8("DeleteCurrentRow"))
+        self.horizontalLayout.addWidget(self.DeleteCurrentRow)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.tableWidget = QtGui.QTableWidget(Form)
+        self.tableWidget.setAutoFillBackground(False)
+        self.tableWidget.setFrameShape(QtGui.QFrame.Box)
+        self.tableWidget.setFrameShadow(QtGui.QFrame.Raised)
+        self.tableWidget.setLineWidth(3)
+        self.tableWidget.setMidLineWidth(2)
+        self.tableWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.tableWidget.setDragEnabled(False)
+        self.tableWidget.setDragDropMode(QtGui.QAbstractItemView.NoDragDrop)
+        self.tableWidget.setDefaultDropAction(QtCore.Qt.CopyAction)
+        self.tableWidget.setAlternatingRowColors(True)
+        self.tableWidget.setObjectName(_fromUtf8("tableWidget"))
+        self.tableWidget.setColumnCount(6)
+        self.tableWidget.setRowCount(3)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(2, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, item)
+        item = QtGui.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(5, item)
+        self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
+        self.tableWidget.horizontalHeader().setDefaultSectionSize(100)
+        self.tableWidget.horizontalHeader().setStretchLastSection(False)
+        self.tableWidget.verticalHeader().setCascadingSectionResizes(False)
+        self.tableWidget.verticalHeader().setStretchLastSection(False)
+        self.verticalLayout.addWidget(self.tableWidget)
+        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
-# Direct import method from .ui
-#(Ui_MainWindow, QMainWindow) = uic.loadUiType('moistureConversionGUI.ui')
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
 
-#importing os library 
-import os
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(_translate("Form", "Form", None))
+        self.insert_row.setText(_translate("Form", "Insert Row at Bottom", None))
+        self.DeleteCurrentRow.setText(_translate("Form", "Delete Selected Row", None))
+        self.tableWidget.setSortingEnabled(True)
+        item = self.tableWidget.verticalHeaderItem(0)
+        item.setText(_translate("Form", "Obj", None))
+        item = self.tableWidget.verticalHeaderItem(1)
+        item.setText(_translate("Form", "STO", None))
+        item = self.tableWidget.verticalHeaderItem(2)
+        item.setText(_translate("Form", "Img", None))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("Form", "Surface", None))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("Form", "Radius", None))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("Form", "Thickness", None))
+        item = self.tableWidget.horizontalHeaderItem(3)
+        item.setText(_translate("Form", "Glass", None))
+        item = self.tableWidget.horizontalHeaderItem(4)
+        item.setText(_translate("Form", "Semi-Diameter", None))
+        item = self.tableWidget.horizontalHeaderItem(5)
+        item.setText(_translate("Form", "Conic", None))
 
-# import xlwings for excel file handling
-from xlwings import Range, Workbook
-
-#Importing matplotlib tools for plotting the 3d surface
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
-import matplotlib.pyplot as plt
-from pylab import savefig
-
-#import numpy for array operations
-import numpy as np
-
-import inputTable_UI
-# create the class MainWindow which will run the GUI
-class MainTable(QWidget):
-    
-    # initial method that only runs once upon creation of the class object
-    def __init__(self, parent = None):
-        QWidget.__init__(self, parent)
-
-        # (Personal preference) importing the compiled .py GUI file from the ui file into the MainWindow Class
-        self.win = inputTable_UI.QtGui.QWidget()
-        self.uiplot = inputTable_UI.Ui_Form()
-        self.uiplot.setupUi(self.win)
-        self.win.show()
-        self.win.setWindowTitle('Optics Input Table')
-        
-        self.uiplot.insert_row.clicked.connect(self.addRows)
-        self.uiplot.DeleteCurrentRow.clicked.connect(self.delRows)
-        self.inputTable = self.uiplot.tableWidget
-        
-    def addRows(self):
-        self.inputTable.insertRow(self.inputTable.rowCount())
-
-    def delRows(self):
-        self.inputTable.removeRow(self.inputTable.currentRow())    

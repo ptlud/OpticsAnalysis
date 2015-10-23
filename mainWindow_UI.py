@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'mainWindow_UI.ui'
+#
+# Created: Fri Oct 23 13:18:28 2015
+#      by: PyQt4 UI code generator 4.10.4
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt4 import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtGui.QWidget(MainWindow)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setObjectName(_fromUtf8("menubar"))
+        self.menuInput = QtGui.QMenu(self.menubar)
+        self.menuInput.setObjectName(_fromUtf8("menuInput"))
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionOptic_Input_Data = QtGui.QAction(MainWindow)
+        self.actionOptic_Input_Data.setObjectName(_fromUtf8("actionOptic_Input_Data"))
+        self.menuInput.addAction(self.actionOptic_Input_Data)
+        self.menubar.addAction(self.menuInput.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
+        self.menuInput.setTitle(_translate("MainWindow", "Input", None))
+        self.actionOptic_Input_Data.setText(_translate("MainWindow", "Optic Input Data", None))
+
